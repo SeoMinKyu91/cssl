@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULOL08.html</title>
+</head>
+<body>
+    <!-- 
+        UL태그 : unordered List(순서가 없는 목록)
+            순서가 없는 목록을 나타날때 사용하는 태그 목록을 나타내기 위해
+            하위 요소로 li(list item)태그(block element)를 가짐
+
+        속성 - hype:disc( 기본 동그라미),square(네모 ),circle(가운데 빈 동그라미)
+
+        block elemnet
+
+        단,type속성에 1(number순)이나, A,a(알파벳순), I,i(로마숫자)도 지정가능
+
+        OL태그(oreder List 순서가 있는목록)
+        하위요소로 li태그를 가진다.
+        ul에 없는 ol에만 있는 속성은 start가 있다.
+        
+        start : 순서의 시작 값 지정
+     -->
+     <div>
+         <h2>당신이 좋아하는 스포츠는?</h2>
+         <ul style='list-style-type: square;background-color: yellow;'>
+         <!-- <ul type="disc"> -->
+             <li style="background-color: red;">축구</li> <!-- 부모영억도 다 차지한다-->
+             <li style="list-style: circle;">야구</li>
+             <li>농구</li>
+         </ul>
+         <h2>당신이 좋아하는 영화장르는?</h2>
+         <ul style="list-style-type: upper-alpha;">
+             <li>액션</li>
+             <li>SF</li>
+             <li>스펙터클</li>
+             <li>범죄스릴러</li>
+         </ul>
+         <h2>당신이 좋아하는 스포츠는?</h2>
+         <ol style="list-style:lower-roman;">
+            <li>액션</li>
+            <li>SF</li>
+            <li>스펙터클</li>
+            <li>범죄스릴러</li>
+         </ol>
+     </div>
+</body>
+</html>

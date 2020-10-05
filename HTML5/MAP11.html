@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAP11.html</title>
+</head>
+<body>
+    <!-- 
+        맵태그 :
+        Left top이 왼쪽위부터 반시계방향
+
+     -->
+     <h2>이미지 맵</h2>
+     <img src="../Images/korea.png" alt="대한민국 지도 이미지" usemap="#korea"/>
+     <map name="korea">
+         <!-- 분할하면 된다. -->
+         <area href="http://www.seoul.go.kr" shape="circle" coords="191,139,12" alt="서울"/>
+         <area href="http://www.busan.go.kr" shape="rect" coords="333,347,373,370" alt="부산"/>
+         <area href="http://www.jeju.go.kr" shape="poly" coords="116,537,128,557,187,533,181,520,150,518" alt="제주도"/>
+     </map>
+</body>
+</html>

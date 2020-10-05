@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForWhile06.html</title>
+    <script>
+        /*
+        자바 : for문 안에서 선언된 변수는 for문이 끝나면 소면된다.
+        자스 : script태그 안에서 선언된 변수는 
+        해당 페이지 모든영역에서 사용가능하다.
+        
+        **script안에서 선언된 변수 : 전역변수
+        **함수안에서 선언된 변수 : 지역변수
+
+        */
+
+        //     function a(){
+        //        var num=10;
+        //    } // 요거는 지역변수로 선언됨 num이..그래서 아래꺼 출력하면 에러발생
+        if (true) {
+            var num = 10;
+        }
+        document.write(num + "<br/>");
+
+        for (var i = 0; i < 5; i++) {
+            var gVar = "For문 안에서 선언된 변수";
+            document.write("i=" + i + "<br/>");
+        }
+        document.write("for문이 끝난 후 : i=" + i + "<br/>");
+
+        document.write("<h3>for문으로 출력</h3>");
+        for(var i=0;i<5;i++){
+            for(var j=0;j<5;j++){
+                if(i==j) document.write("1 ");
+                else document.write("0 ");
+            }
+            document.write("<br/>");
+        }
+
+
+        document.write("<h3>테이블 While문으로 출력</h3>");
+        var ii=0;
+        var htmlString="<table style='border-spacing:2px;background-color:green;width:200px;text-align:center'>";
+        while(ii<5){
+            var jj=0; 
+            htmlString+="<tr style='background-color:white'>";   
+            while(jj<5){ 
+                if(ii==jj)
+                    htmlString+="<td style='background-color:yellow'>1 </td>";
+                else
+                    htmlString+="<td>0 </td>";
+                jj++;
+            }
+            htmlString+='</tr>';
+            ii++;
+        }
+        htmlString+="</table>";
+        document.write(htmlString);
+
+        document.write("<h3>테이블 For문으로 출력</h3>");
+        var tableString = "<table style='text-align:center;border-spacing:3px;background-color:gray;width:200px;'>";
+        for(i=0;i<5;i++){
+            tableString+="<tr style='border-spacing:2px; background-color:white'>"
+            for(j=0;j<5;j++){
+                if(i==j) tableString += "<td>1</td>";
+                else tableString += "<td style='background-color:yellow;'>0</td>";
+            }
+            tableString+="</tr>"
+        }
+        tableString += "</table>";
+        document.write(tableString);
+
+        document.write("<h3>테이블 바로 출력 구구단 FOR문 </h3>");
+        document.write("<table style='text-align:center;border-spacing:3px;background-color:gray;width:800px;'>");
+        for(i=1;i<=9;i++){
+                document.write("<tr style='background-color:white;'>");
+            for(j=2;j<=9;j++){
+                if(j%2==0)
+                    document.write("<td style='background-color:yellow;'>"+j+" * "+i+" = "+i*j+"</td>");
+                else
+                    document.write("<td>"+j+" * "+i+" = "+i*j+"</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+        //document.write(tableString);
+
+    </script>
+</head>
+
+<body>
+    <script>
+        document.write("for문이 끝난 후 : i=" + i + "<br/>gVar = "+gVar);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function08_1.html</title>
+    <script>
+        /*
+        함수정의
+        방법1] 함수 선언문(유명함수)
+        function 함수명([매개변수1,매개변수2,...]){ //var사용불가, 즉 매개변수 정의시 변수명만
+            함수가 할일 구현;
+            [return 변수혹은 값;]
+            * return이후의 명령문은 실행이 안됨
+            return 10;
+            sysout("dddd"); <== 자바는 컴파일에러 unreachable발생하는데 자스는 에러는 나진 않는다.
+        }
+        
+        방법2] 함수 표현식(익명함수)
+        var 변수명 = function([매개변수1,매개변수2,...]){ //변수명을 함수명처럼 쓰면된다.
+            함수가 할일 구현;
+            [return 변수혹은 값;]
+        }
+
+        방법3] 즉시 실행 함수
+        (function [함수명]([매개변수1,매개변수2,..])){
+                함수가 할일 구현;
+                [return 변수혹은 값;]
+                * return이후의 명령문은 실행이 안됨
+        })([매개변수1,매개변수2,...])
+
+        //함수호출
+        -함수 정의한 원형 그대로 호출
+        * 함수 안에서 선언된 변수는 함수호출이 끝나면 메모리에서 사라진다. 즉 지역변수이다.
+        Script태그안에서 선언된 변수는 해당 페이지 모든영역에서 사용가능한 전역변수 이다.
+
+        */
+       //함수 형식 1
+       //1. 함수정의 - 함수 선언문
+       function noParamNoReturn(){
+           document.write("============== 메뉴 ===========<br/>");
+           document.write("1.계속 2.나가기 <br/>");
+           document.write("============== ==== ===========<br/>");
+       }
+       document.write("noParamNoReturn의 자료형 : "+typeof noParamNoReturn+"<br/>");
+       document.write("noParamNoReturn : "+ noParamNoReturn+"<br/>");
+       noParamNoReturn();
+
+       //함수 형식2
+       //함수 정의- 함수 표현식
+       /*
+       함수의 시작 주소를 왼쪽의 변수명에 저장
+       변수명을 마치 함수명처럼 사용가능
+       */
+       var yesParamNoReturn = function(start,end){
+           var total=0; //지역변수
+           for(var i=start;i<=end;i++){
+               total += i;
+           }
+           document.write(start+"부터 "+end+"까지의 총 합은 : "+total+"<br/>");
+       };
+       document.write("yesParamNoReturn의 자료형 : "+typeof yesParamNoReturn +"<br/>");
+       document.write("yesParamNoReturn : "+ yesParamNoReturn+"<br/>");
+       //함수 호출
+       yesParamNoReturn(1,10);
+       yesParamNoReturn(10,100);
+       /*
+        전역변수 : script태그안에서 선언된 변수로 해당 페이지 어디에서나 
+        지역변수 : 함수안에 선언된 변수(매개변수)
+       */
+      //document.write("함수안에서 선언된 변수 : total="+total+"<br/>"); //[x]total은 지역변수
+      //document.write("fasdfasf<br/>"); //그 전에 에러가 나면 JS는 실행이 멈춰버린다.
+      //document.write("함수안에서 선언된 변수 : i="+i+"<br/>"); //[x]i은 지역변수
+      //document.write("함수안에서 선언된 변수 : start="+start+"<br/>"); //[x]매개변수도 지역변수
+
+       //함수 형식3
+       var noParamYesReturn = function(){
+           var name = prompt("이름 입력? ", "");
+           var age = prompt("이름 입력? ","20");
+           return "이름 : "+name+" ,나이 : "+age;
+           //document.write("return 이후 출력문"); // 자바는 unreachable code에러 발생하지만 자스는 실행만 안된다.
+       };
+       //함수호출
+       //document.write(noParamYesReturn()); //[o]
+
+       //함수 형식4
+       function yesParamYesReturn(num1,num2){
+           return num1 > num2 ? num1 : num2 ;
+       }
+       //함수호출
+       document.write("최대값 : "+yesParamYesReturn(10,20)+"<br/>");
+
+       //즉시 실행함수
+       var plus=(function(num1,num2){return num1+num2})(10,20);
+       document.write("plus의 자료형 : "+typeof plus+"<br/>"); //이미 함수에서 계산이 된값이 plus에 저장되서 plus가 number형이다.
+       document.write("즉시실행함수 10+20은? : "+plus+"<br/>");
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

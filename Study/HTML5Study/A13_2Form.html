@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form13_2.html</title>
+</head>
+<body>
+    <div>
+        <h2>Form태그의 하위 요소들(태그들)</h2>
+        <h3>text먼저</h3>
+        기본텍스트 : <input type="text"/><br/>
+        속성추가 : <input type="text" size="10" maxlength="10" value="기본텍스트"/>
+        <br/>
+
+        <h3>PassWord</h3>
+        기본패스워드 : <input type="password"/><br/>
+        패스워드 지정 : <input type="password" value="1234"/><br/>
+
+        <h3>checkbox</h3>
+        <fieldset>
+            <legend>당신의 관심사항은?</legend>
+            <label for="pol">정치</label> <input type="checkbox" name="inter" value="pol" id="pol">
+            경제 <input type="checkbox" name="inter" value="eco" checked/> 
+        </fieldset>
+
+        <h3>radio</h3>
+        <fieldset>
+            <legend>당신의 성별은</legend>
+            <input type="radio" name="gender" value="male" checked/>남성 
+            <input type="radio" name="gender" value="female" id="female"/><label for="female">여성</label>
+        </fieldset>
+
+        <h3>file</h3>
+        file기본 : <input type="file" value=""/>
+
+        <h3>hidden</h3>
+        <form>
+            <input type="hidden" name="no" value="1"/>
+            이름 <input type="text" name="name"/>
+            <input type="submit" value="로그인">
+        </form>
+
+        <h3>&lt;select&gt;</h3>
+        <form>
+            <select name="grade" size="2" multiple>
+                <option value="ele" selected> 초딩 </option>
+                <option value="mid" > 중딩 </option>
+            </select>
+        </form>
+
+
+
+    </div>
+</body>
+</html>

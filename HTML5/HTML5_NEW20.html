@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5_NEW20.html</title>
+</head>
+<body>
+    <fieldset>
+        <legend>HTML5에 새롭게 추가된 태그나 속성들</legend>
+        <h2>텍스트에 하이라이트 효과주는 태그(mark)</h2>
+        <p>
+            통계청은 9월 소비자물가지수가 106.20(2015년=100)으로
+            지난해 같은 달보다 1.0% 상승했다고 6일 밝혔다.<br/>
+            지난 3월(1.0%) 이후 가장 높은 상승률로, 
+            6개월 만에 1%대 복귀를 의미한다.<br/><br/>
+
+            소비자물가 상승률은 올해 1∼3월 1%대에서 
+            <mark>코로나19</mark>(신종 코로나바이러스 감염증) 사태 여파로 <br/>
+            4월 0.1%, 5월 -0.3%로 내려갔다가 6월을 기점으로 반등하고 있다. 
+            6월 0.0% 이후 7월에 0.3%, <span style="background-color: yellow;">8월에 0.7%</span>를 기록했었다.<br/><br/>
+        </p>
+        <h2>진행을 표시하는 태그(progress)</h2>
+        <progress value="100" max="200" style="width:300px;height:50px;"></progress>
+
+        <h2>자동완성 태그(datalist)</h2>
+        <label for="keyword">검색어를 입력하세요</label>
+        <input type="search" id="keyword" list="data_list"/>
+        <datalist id="data_list">
+            <option value="코로나"></option>
+            <option value="코로나19"></option>
+            <option value="코카콜라"></option>
+            <option value="코알라"></option>
+            <option value="HTML5"></option>
+            <option value="NAVER"></option>
+            <option value="NATE"></option>
+        </datalist>
+        <h2>이미지를 그룹화 하는 태그(figure)</h2>
+        <figure>
+            <figcaption>자바 이미지1</figcaption>
+            <img src="../Images/java-logo.jpg" alt="첫번째 이미지" width="100" height="50"/>
+        </figure>
+        <figure>
+            <figcaption>자바 이미지2</figcaption>
+            <img src="../Images/java-logo.jpg" alt="두번째 이미지" width="100" height="50"/>
+        </figure>
+        <h2>새롭게 추가된 속성들</h2>
+        <h3>multiple,accept속성</h3>
+        <input type="file" multiple accept="image/png,image/jpeg"/>
+        <!-- accept속성은 매우 중요 마이? : image/png,image/jpeg -->
+
+        <h3>autofocus</h3>
+        <input type="text" autofocus/>
+
+        <h3>contenteditable속성</h3>
+        <p contenteditable="true">
+            통계청은 9월 소비자물가지수가 106.20(2015년=100)으로
+            지난해 같은 달보다 1.0% 상승했다고 6일 밝혔다.<br/>
+            지난 3월(1.0%) 이후 가장 높은 상승률로, 
+            6개월 만에 1%대 복귀를 의미한다.<br/><br/>
+
+            소비자물가 상승률은 올해 1∼3월 1%대에서 
+            <mark>코로나19</mark>(신종 코로나바이러스 감염증) 사태 여파로 <br/>
+            4월 0.1%, 5월 -0.3%로 내려갔다가 6월을 기점으로 반등하고 있다. 
+            6월 0.0% 이후 7월에 0.3%, <span style="background-color: yellow;">8월에 0.7%</span>를 기록했었다.<br/><br/>
+        </p>
+
+        <h3>hidden속성</h3>
+        <input type="button" value="버튼" hidden/>
+
+        <h3>required속성</h3>
+        <form action="https://www.nate.com">
+            <input type="text" name="name" required/>
+            남자 <input type="radio" name="gender" value="남자" required/>
+            여자 <input type="radio" name="gender" value="여자" required/>
+            동의 <input type="checkbox" name="accept" value="YES" required/>
+            <input type="submit" value="확인"/>
+        </form>
+
+        <h3>placeholder속성</h3>
+        아이디<input type="text" placeholder="아이디" />
+        비밀번호 <input type="password" placeholder="비밀번호" />
+
+    </fieldset>
+</body>
+</html>

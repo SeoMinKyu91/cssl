@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF.html</title>
+    
+    <script>
+        var nullvar = null, num1 = num2 = 10;
+        if(nullvar) document.write("null은 true다<br/>");
+        else document.write("null은 false다<br/>");
+        if(num1-num2) document.write("10-10은 true다<br/>");
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend> 성적 출력 </legend>
+        국어 <input type="text" id="kor"/>
+        영어 <input type="text" id="eng"/>
+        수학 <input type="text" id="math"/>
+        <span id="gradeResult" style="color: red;">여기에 출력</span>
+        <input type="button" value="확인" onclick="getGrade()"/>
+    </fieldset>
+    <script>
+        var userKor = document.getElementById("kor");
+        var userEng = document.getElementById("eng");
+        var userMath = document.getElementById("math");
+        var result = document.getElementById("gradeResult");
+        function getGrade(){
+            var kor = parseInt(userKor.value);
+            var eng = parseInt(userEng.value);
+            var math = parseInt(userMath.value);
+
+            var avg = (kor+eng+math)/3;
+            result.innerHTML = avg;
+        }
+
+    </script>
+</body>
+</html>

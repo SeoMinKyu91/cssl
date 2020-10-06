@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form1</title>
+</head>
+<body>
+<!-- 
+    Form방식은 Get,Post두가지의 사용자가 입력한 값 또는 선택한 값을 서버에 
+    전송하는 2가지 방식이 있다.
+    속성은 2가지로 Action과 Method가 있다.
+    Action은 사용자가 입력한 값을 전송할 서버상에 있는 페이지 경로
+    action 생략시 자기자신 페이지이다.
+    Method는 get/post 데이터 전송방식을 의미한다.
+    method 생략시엔 get이 기본값이다.
+ -->
+ <div>
+     <h2>Form태그로 데이터 전송하기</h2>
+     <h3>GET방식으로 요청</h3>
+     <form action = "https://www.naver.com">
+        아이디 : <input type="text" name="user"/>
+        비밀번호 : <input type="password" name="pass"/>
+        <input type="submit" value="로그인"/>
+    </form>
+    
+    <h3>POST방식으로 요청</h3>
+    <form action = "https://www.naver.com" method="POST">
+        아이디 : <input type="text" name="user"/>
+        비밀번호 : <input type="password" name="pass"/>
+        찾기 <input type="search"/>
+        <input type="submit" value="로그인"/>
+    </form>
+ </div>
+</body>
+</html>

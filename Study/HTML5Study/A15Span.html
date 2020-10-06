@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Span.html</title>
+    <style>
+        .monday{
+            color: gray;
+            font-style: italic;
+            font-size: 10px;
+        }
+        .html5{
+            color: green;
+            font-style: initial;
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        var toggle = false;
+        function textChange(){
+            var span = document.getElementById("text"); 
+            if(!toggle)
+                span.innerHTML = "제와피";
+            else
+                span.innerHTML = "JYP";
+            toggle = !toggle;
+        }
+
+        function gugu(){
+            var span = document.getElementById("gugudan");
+            var guguString = "<table>";
+            for(var i=1;i<=9;i++){
+                guguString += "<tr>"
+                for(var j=2;j<=9;j++){
+                    guguString += "<td>"+j+" * "+i+" = "+j*i+"</td>";
+                }
+                guguString += "</tr>";
+            }
+            guguString += "</table>"
+            span.innerHTML = guguString;
+        }
+    </script>
+</head>
+<body>
+    기본 텍스트
+    <h2>스펜은 CSS나 JS를 위한 태그</h2>
+    <div>
+        <h3>&lt;span&gt;태그</h3>
+        오늘의 첫 수업은 <span id="text">JYP</span> 입니다.<br/>
+        아래에 구구단 표시하기<br/>
+        <span id="gugudan"></span>
+
+        <fieldset>
+            <legend>버튼을 눌러주세요.</legend>
+            <input type="button" value="텍스트 바꾸기" onclick="textChange()"/>
+            <input type="button" value="구구단 표시고" onclick="gugu()"/>
+        </fieldset>
+
+        <h3>CSS에서 활용</h3>
+        오늘은 <span class="monday">월요일</span> 입니다.
+        <span class="html5">HTML5</span> 수업 입니다.
+
+    </div>
+</body>
+</html>

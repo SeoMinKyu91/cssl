@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForWhile.html</title>
+    <script>
+        if(true){
+            var num = 10;
+        }
+        document.write(num);
+        // function a(){
+        //     var funNum = 10;
+        // }
+        // document.write(funNum);
+        document.write("<h2>함수표현식으로 For문 테이블로 출력하기</h2>");
+        var forTable = function(){
+            var StringTable = "<table>";
+            for(var i=0;i<5;i++){
+                StringTable += "<tr>";
+                for(var j=0;j<5;j++){
+                    if(i==j) StringTable += "<td>1 </td>";
+                    else StringTable += "<td>0 </td>";
+                }
+                StringTable += "</tr>";
+            }
+            StringTable += "</table>";
+            document.write(StringTable);
+        }
+        forTable();
+        
+        document.write("<h2>즉시실행함수로 For문 테이블로 출력하기</h2>");
+        (function (){
+            var StringTable = "<table>";
+            for(var i=0;i<5;i++){
+                StringTable += "<tr>";
+                for(var j=0;j<5;j++){
+                    if(i==j) StringTable += "<td> 1 </td>";
+                    else StringTable += "<td> 0 </td>";
+                }
+                StringTable += "</tr>";
+            }
+            StringTable += "</table>";
+            document.write(StringTable);
+        })();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

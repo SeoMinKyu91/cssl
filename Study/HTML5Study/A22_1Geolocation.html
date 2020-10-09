@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoLocation.html</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Geoloationc API - 현재 위치의 위도와 경도 얻기</legend>
+        <span id="display" style="color: red;font-size:1.5em;font-weight: bold"></span>
+    </fieldset>
+    <script>
+        console.log(window.navigator.geolocation);
+        var spanDisplay = document.getElementById("display");
+        if(navigator.geolocation){
+            spanDisplay.innerHTML = "geolocation을 지원합니다.";
+            
+            var options = {timeout:3000,maxinumAge:5000};
+            
+            navigator.geolocation.getCurrentPosition(successCallback,
+            errorCallback,options);
+
+        }else{
+            spanDisplay.innerHTML = "geolocation을 지원하지 않습니다.";
+        }
+
+        function successCallback(position){
+            console.log("position의 자료형 : "+typeof postion);
+            var lat = position.coords.latitude;
+            var lng = position.coords.longitude;
+            spanDisplay.innerHTML = lat+" , "+lng;
+        }
+        function errorCallback(error){
+            switch(error){
+                case 1 : spanDisplay.innerHTML = "허용이 거부되었다.";break;
+                case 2 : spanDisplay.innerHTML = "위치 확인 불가";break;
+                case 3 : spanDisplay.innerHTML = "시간초과"; break;
+                default : spanDisplay.innerHTML = error.message;
+            }
+        }
+
+    </script>
+</body>
+</html>

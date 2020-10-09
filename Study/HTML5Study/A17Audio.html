@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+</head>
+<body>
+    <h2>기본 audio(src속성만 사용)태그</h2>
+    <audio src="../../HTML5/Media/audio.mp3" controls>
+        audio태그를 지원하지 않는 브라우저 입니다.<br/>
+        여기를 <a href="../../HTML5/Media/audio.mp3">클릭</a>해주세요
+    </audio>
+    <h2>audio 하위태그인 &lt;source&gt;태그 사용</h2>
+    <audio controls loop>
+        <source src="../../HTML5/Media/audio.ogg" type="audio/ogg"/>
+        <source src="../../HTML5/Media/audio.mp3" type="audio/mp3"/>
+    </audio>
+    <h2>커스텀 오디오</h2>
+    <div>
+        <progress value="0" id="progress"></progress>
+    </div>
+    <div>
+        <input type="button" value="PLAY" onclick="play();"/>
+        <input type="button" value="PASUE" onclick="pause();"/>
+        <input type="button" value="STOP" onclick="stop();"/>
+        &nbsp;&nbsp;<span id="current"></span> / <span id="total"></span>
+    </div>
+    <script>
+        //audio객체 얻기
+        var audio = new Audio("../../HTML5/Media/audio.mp3");
+        console.log("자료형:%s, audio:%s",typeof audio,audio);
+
+        //span객체 얻기
+        var currentSpan = document.getElementById("current");
+        var totalSpan = document.getElementById("total");
+
+        //progress객체 얻기
+        var progress = document.getElementById("progress");
+
+        audio.addEventListener("timeupdate",function(){
+            totalSpan.innerHTML = audio.duration;
+            currentSpan.innerHTML = audio.currentTime;
+            progress.max = audio.duration;
+
+            progress.value = audio.currentTime;
+        });
+        var play = function(){
+            audio.play();
+        };
+        var pause = function(){
+            audio.pause();
+        }
+        var stop = function(){
+            if(audio.played){
+                audio.pause();
+                audio.currentTime=0;
+            }
+        };
+    </script>
+</body>
+</html>

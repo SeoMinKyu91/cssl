@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A21WebStorage.html</title>
+</head>
+<body>
+    <fieldset>
+        <legend>웹 스토리지 이용해서 방문자 회원수 카운팅(로컬 스토리지)</legend>
+        <span id="display"></span>
+        <button onclick="removeStorage();">로컬 스토리지 삭제</button>
+    </fieldset>
+    <script>
+        //웹 스토리지 지원여부 판단
+        console.log( typeof(Storage) != undefined);
+        var span;
+        if(typeof(Storage) != undefined){
+            span = document.getElementById("display");
+            span.innerHTML = "웹 스토리지 지원함";
+
+            var counter = localStorage.getItem("counter");
+            if(counter === null){
+                localStorage.setItem("counter",1);
+                span.innerHTML = "처음방문하셨군요";
+            }
+            else {
+                span.innerHTML = counter+"번째 방문하셨군요";
+                counter++;
+                localStorage.setItem("counter",counter);
+            }
+            function removeStorage(){
+                span.innerHTML = "방문횟수가 초기화 되었습니다.";
+                localStorage.removeItem("counter");
+            }  
+        }
+    </script>
+</body>
+</html>

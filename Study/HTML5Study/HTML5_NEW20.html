@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5_NEW20</title>
+</head>
+<body>
+    <fieldset>
+        <legend><mark>마크</mark></legend>
+        <p>
+            <mark>마크</mark>
+        </p>
+        <progress value="100" max="200"></progress>
+        
+        <label for="keyword">검색어를 입력하세요.</label>
+        <input type="search" id="keyword" list="date_list"/>
+        <datalist id="date_list">
+            <option value="코로나"></option>
+            <option value="코코아"></option>
+            <option value="코카콜라"></option>
+        </datalist>
+        <h2>이미지 그룹화</h2>
+        <figure>
+            <figcaption>자바 이미지1</figcaption>
+            <img src="../../Images/java-logo.jpg" alt="첫번째 이미지"
+            width="100" height="50"/>
+        </figure>
+        <input type="file" multiple accept="image/bmp,image/png,image/jpeg"/>
+        <form action="https://www.nate.com">
+            <input type="text" name="name" required/>
+            남자 <input type="radio" name="gender" value="남자" required/>
+            여자 <input type="radio" name="gender" value="여자" required/>
+            동의 <input type="checkbox" name="accept" value="YES" required/>
+            <input type="submit" value="확인"/>
+        </form>
+        
+        <h3>placeholder</h3>
+        ID <input type="text" placeholder="ID"/>
+        PW <input type="password" placeholder="PW"/>
+    </fieldset>
+</body>
+</html>

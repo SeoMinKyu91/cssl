@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotto.html</title>
+    <script>
+        function setRandomNumber(array,start,end){
+            for(var i=0;i<array.length;i++){  
+                while(true){
+                    var isDuplicated = false;
+                    var rand = parseInt(Math.random()*45)+1;
+                    for(var j=0;j<=i-1;j++){
+                        if(rand == array[j]){
+                            isDuplicated = true;
+                            break;
+                        }
+                    }
+                    if(!isDuplicated){
+                        array[i]=rand;
+                        break;
+                    }
+                }
+            }
+        }
+    
+        var lotto = new Array(6);
+        setRandomNumber(lotto,1,45);
+
+        lotto.forEach(function(item){
+            console.log(item);
+        });
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>로또 발생기</legend>
+        <button onclick="getLotto()">로또 발생!!</button>
+        <span id="lotto" style="color: red;font-size: 50px;font-weight: bold;"></span>
+    </fieldset>
+    <script>
+        var span = document.getElementById("lotto");
+        function getLotto(){
+            var lottoString="";
+            //lotto = new Array(6);
+            setRandomNumber(lotto,1,45);
+            lotto.forEach(function(item){
+                lottoString += item+" ";
+            });
+            span.innerHTML = lottoString;
+        }
+    </script>
+</body>
+</html>

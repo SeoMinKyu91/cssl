@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>geolcation</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Geoloationc API - 현재 위치 갱신하기</legend>
+        <button onclick="start();"> 위치추적 시작 </button>
+        <button onclick="stop();"> 위치추적 정지 </button>
+        <span id="display" style="color: red;font-size:1.5em;font-weight: bold"></span>
+    </fieldset>
+    <script>
+        var span = document.getElementById("display");
+        var watcher;
+        function start(){
+            if(window.navigator.geolocation){
+                span.innerHTML = "geolocation을 지원합니다.";
+                var options = {timeout:3000,maximumAge:5000};
+                watcher = navigator.geolocation.watchPosition(successCallback,
+                errorCallback,options);
+                console.log("watcher : ",watcher);
+                //watcher 숫자로 된 ID
+            }
+            else{
+                span.innerHTML = "geolocation을 지원하지 않습니다.";
+            }
+        };
+        var stop = function(){
+            navigator.geolocation.clearWatch(watcher);
+        };
+
+        function successCallback(Position){
+            var lat = Position.coords.latitude;
+            var lng = Position.coords.longitude;
+            span.innerHTML = lat + " , " + lng;
+        };
+        function errorCallback(error){
+            switch(error){
+                case 1 : span.innerHTML = "허용되지 않았습니다.";break;
+                case 2 : span.innerHTML = "위치 확인 불가";break;
+                case 3 : span.innerHTML = "시간초과";break;
+                default : span.innerHTML = error.message;
+            }
+        };
+    </script>
+</body>
+</html>

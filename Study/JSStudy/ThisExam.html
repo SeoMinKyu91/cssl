@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThisExam.html</title>
+    <script>
+        var value = 100;
+
+        var myObject = {
+            value : 1,
+            firstValue : function(){               
+                this.value += 1;
+                console.log("firstValue : " + this.value);
+
+                secValue = function(){
+                    this.value += 1;
+                    console.log("secValue : " + this.value);
+
+                    thirValue = function(){
+                        this.value += 1;
+                        console.log("thirValue : " + this.value);
+                    } // thirValue
+                    thirValue();
+                } //secValue
+                secValue();
+            } //firstValue
+        }; //myObject
+
+        myObject.firstValue();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

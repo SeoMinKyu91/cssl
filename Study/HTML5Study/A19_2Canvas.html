@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvans19_2.html</title>
+</head>
+<body>
+    <div>
+        <h2>canvas태그</h2>
+        <canvas id="canvas" width="200" height="200" 
+        style="background-color: yellow;"></canvas>
+
+        <script>
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+
+            ctx.font = "25 돋움체";
+            ctx.fillStyle = "blue";
+
+            //기준선긋기
+            // ctx.beginPath();
+            ctx.strokeStyle = "red";
+            ctx.moveTo(50,20);
+            ctx.lineTo(50,180);
+            ctx.stroke();
+            // ctx.closePath();
+
+            // ctx.beginPath();
+            ctx.shadowColor = "rgba(0,255,0,0.5)";
+            ctx.shadowOffsetX = 5;
+            ctx.shodowOffsetY = 5;
+
+            ctx.shadowBlur = 5; //그림자의 퍼진정도 최대값 100
+            ctx.textAlign = "start";
+            ctx.fillText("HTML5_STRAT",50,50);
+            ctx.textAlign = "end";
+            ctx.fillText("HTML5_end",50,150);
+            ctx.textAlign = "center";
+            ctx.fillText("HTML5_center",50,110);
+            ctx.textAlign = "left";
+            ctx.fillText("HTML5_left",50,140);
+            ctx.textAlign = "rigth";
+            ctx.fillText("HTML5_RIGHT",50,170);
+
+            // ctx.closePath();
+
+        </script>
+    </div>
+</body>
+</html>

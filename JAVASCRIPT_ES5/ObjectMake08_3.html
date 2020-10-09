@@ -39,9 +39,13 @@
         //함수 추가
         brace.print = function(){
             console.log(this); //이 함수 누가 호출하느냐에 따라 this의 주체가 달라진다.
-            console.log("------this의 타입 및 값-------")
+           
+                     console.log("------this의 타입 및 값-------")
+
             console.log(typeof this);
-            console.log(this === window);
+
+                  console.log(this === window);
+
             console.log("이름:%s,나이:%s",this.name,this.age);
         };
         

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A91_3Canvas.html</title>
+    <script>
+        window.addEventListener("load",function(){
+            var canvas = document.getElementById("canvas");
+            var ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            
+            ctx.strokeStyle="red";
+            ctx.moveTo(60,313);
+            ctx.lineTo(120,166);
+            ctx.lineTo(180,76);
+            ctx.stroke();
+
+            ctx.closePath();
+
+            var canvasimg = document.getElementById("canvasimg");
+            ctx = canvasimg.getContext("2d");
+            var img = new Image();
+            img.src = "../../Images/button.jpg";
+
+            img.onload=function(){
+                ctx.drawImage(img,0,0,100,50);
+            };
+
+            //ctx.drawImage();
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <h2>canvas 태그</h2>
+        <canvas id="canvas" width="550" height="450" 
+        style="background-color: yellow;"></canvas>
+        <canvas id="canvasimg" width="300"heigth="300"
+        style="background-color: green; border: 1px;">
+        </canvas>
+    </div>
+</body>
+</html>

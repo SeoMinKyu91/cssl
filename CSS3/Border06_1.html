@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border06_1.html</title>
+    <style>
+        div div{
+            width:200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>테두리 관련 CSS속성</h2>
+
+    <div>
+        <h3>테두리 스타일</h3>
+
+        <div style="border-top-style: dotted;border-bottom-style: dashed;
+                    border-left-style: solid;border-right-style: double; ">
+            border-style
+        </div>
+
+        <h3>테두리 색상</h3>
+
+        <div style="border-style:solid;border-top-color: red;border-bottom-color: green;
+                    border-left-color: aqua; border-right-color: #94f567;"> 
+                    <!--border-top-color : 색깔 하면 안보임. style을 반드시 지정해야한다.-->
+            border-color
+        </div>
+
+        <h3>테두리 두께</h3>
+
+        <div style="border-style:solid;border-top-width:5px;border-bottom-width:10px;
+                    border-left-width:15px;border-right-width:20px;">
+            <!-- 테두리를 줄때 테두리까지 레이아웃 두께 생각해야한다. -->
+            border-width
+        </div>
+
+        <h3>테두리 색상/두께/스타일 동시지정</h3>
+
+        <div style="border:5px solid red;">
+            border
+        </div>
+
+        <h3>폼의 하위요소 input type="text"계열에 테두리 적용</h3>
+
+        <input type="text" style="border:none;border-bottom: 1px green solid; "/>
+
+    </div>
+
+</body>
+
+</html>

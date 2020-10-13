@@ -1,0 +1,11 @@
+.content{
+    width:80%;
+    background-color: yellowgreen;
+    margin : 0 auto;
+}
+.content p{
+    width:100%;
+    font-size: 1.5em;
+    border : 1px red solid;
+    box-sizing: border-box;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>importMedia</title>
+    <!-- <link href="../Styles/import.css" rel="stylesheet"/> -->
+    <style>
+        /* 
+            import규칙을 이용한 외부 css파일 연결
+            반드시 style태그 안에 반드시 style태그 최상단에 위치(안그러면 적용이 안된다.)
+
+         */
+         @import url(../Styles/import.css);
+         .content{
+             color: greenyellow;
+             background-color: black;
+         }
+         /* @import url(../Styles/import.css);  얘는 맨 위에 놔야한다. */
+         /* media 규칙은 위치에 상관없음 */
+         @media screen {
+             .content{
+                 color:white
+             }
+         }
+         @media print {
+             .content{
+                color: black;
+                background-color: white;
+             }
+         }
+    </style>
+    
+</head>
+<body>
+    <div class="content">
+        <p>
+            김 원내대표는 또한 "국민의힘이 권력형 비리라 주장하는 근거가 있다면 면책특권 뒤에 숨지 말고 떳떳하게 공개하면 된다"고 날을 세웠다. 검찰을 향해선 "성역 없는 철저한 수사로 실체적 진실 규명을 할 것을 검찰에 다시한번 촉구한다"고 했다.
+
+관련 의혹에 이름이 거론된 여권 인사들도 일제히 부인하고 나섰다. 강기정 전 청와대 정무수석은 라임자산운용 전주이자 실소유주 김봉현 전 스타모빌리티 회장으로부터 5000만원을 받았다는 의혹에 대해 "새빨간 거짓말"이라고 반박했다.
+        </p>
+    </div>
+</body>
+</html>

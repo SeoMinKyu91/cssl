@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date.html</title>
+    <script>
+        var today = new Date();
+        console.log("today의 자료형 : "+typeof today);
+        console.log("today : "+today);
+        console.log(today.getFullYear());
+        console.log(today.getYear()+1900);
+
+        var date2 = new Date(2002,5,22,18,10,50);
+        console.log(
+            date2.getFullYear(),
+            date2.getMonth(),
+            date2.getDate(),
+            date2.getHours(),
+            date2.getMinutes(),
+            date2.getSeconds()
+        );
+
+        var date3 = new Date("2020-08-10");
+        console.log(
+            date3.getYear()+1900,
+            date3.getMonth()+1,
+            date3.getDate()
+        );
+
+        date2.setMonth(6,30);
+        console.log(
+            date2.getFullYear(),
+            date2.getMonth(),
+            date2.getDate(),
+            date2.getHours(),
+            date2.getMinutes(),
+            date2.getSeconds()
+        );
+        date2.setDate(29);
+        console.log(date2.getDate());
+
+        var currentDate = new Date("2020-11-10");
+        var endDate = new Date("2021-03-18");
+        var curTime = currentDate.getTime();
+        var endTime = endDate.getTime();
+        console.log( (endTime-curTime)/(1000*60*60*24) );
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

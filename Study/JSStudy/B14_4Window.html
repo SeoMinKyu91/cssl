@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B14_4Window.html</title>
+    <script>
+        var escapeString = "안녕 가! HELLO 1234567890";
+        console.log(escape(escapeString));
+        console.log(unescape("%uC548%uB155%20%uAC00%21%20HELLO%201234567890"));
+    
+        var str = '{"name":"이길동","age":20}';
+        console.log("%O",str);
+
+        console.log("JSON.parse() 함수");
+        var json = JSON.parse(str);
+        console.log(json.name);
+
+        var obj = {'name':'이길동','age':20};
+        var rtobj = eval("(obj)");
+        console.log("%O",rtobj);
+        console.log(rtobj.name);
+
+        isNaN("100A")?console.log("숫자가 아니다."):console.log("숫자다");
+        // parseInt는 문자 시작만 아니면 처음부터 숫자부분 반환해준다.
+        console.log(parseInt("100A")); //100
+        console.log(parseInt("10A10")); //10
+        console.log(parseInt("A100")); //NaN
+        
+        var query = "name=가길동&key=you&age=30";
+        console.log(encodeURI(query));
+        console.log(encodeURIComponent(query));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

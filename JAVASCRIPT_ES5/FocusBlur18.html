@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusBlur18.html</title>
+    <script> 
+        function fnUser(flag,obj){
+            // id = document.getElementById("id");
+            switch(flag)
+            {
+                case 1 : //focus on
+                    if(obj.value =="아이디"){
+                        obj.value="";
+                        obj.style.color="black";
+                    }
+                    break;
+
+                default :
+                    if(obj.value.length==0){
+                        obj.value="아이디";
+                        obj.style="color:lightgray";
+                    }  
+            }
+        }
+        function fnPass(flag){
+            var txt =document.getElementById("txt"); 
+            var pwd = document.getElementById("pwd");
+            switch(flag){
+                case 1:
+                    txt.style.display = "none";
+                    pwd.style.display = "inline"; // = pwd.style.display = "";
+                    pwd.focus();
+                    break;
+                default :
+                    if(pwd.value.length==0){
+                        pwd.style.display = "none";
+                        txt.style.display = "inline";
+                        // txt.value="비밀번호";
+                    }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>focus 및 blur이벤트</legend>
+
+        <input type="text" onfocus="console.log('focus이벤트 발생-포커스를 얻을때');"
+            onblur="console.log('blur이벤트 발생-포커스를 잃을때');" />
+
+    </fieldset>
+
+    <fieldset>
+        <legend>focus 및 blur이벤트 예제(HTML5의 속성 이용-IE에서만 적용됨)</legend>
+
+        아이디 <input type="text" placeholder="아이디" />
+        비밀번호 <input type="password" placeholder="비밀번호" />
+    </fieldset>
+
+    <fieldset>
+        <legend>focus 및 blur이벤트 예제(자바스크립트로 구현)</legend>
+
+        아이디 <input type="text" value="아이디" id="id" style="color:lightgray" onfocus="fnUser(1,this)" onblur="fnUser(2,this)" />
+        비밀번호 <input type="text" value="비밀번호" id="txt" style="color:lightgray" onfocus="fnPass(1)" /><input onblur="fnPass(2)" type="password" id="pwd" style="display:none" />
+    </fieldset>
+</body>
+
+</html>
